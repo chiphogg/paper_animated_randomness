@@ -1,1 +1,1 @@
-Double click to edit the title
+Visualizing uncertainty in curves and surfaces using smooth keyframe-free animations
