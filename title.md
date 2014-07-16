@@ -1,1 +1,1 @@
-Visualizing uncertainty in curves and surfaces using smooth keyframe-free animations
+Keyframe-free smooth animations to show uncertainty in curves and surfaces
