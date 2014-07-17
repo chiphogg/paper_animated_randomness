@@ -1,0 +1,1 @@
+Probability distributions over curves and surfaces can be challenging to visualize.  One approach is to display a sequence of draws from the distribution, forming an animation.  Existing work makes these animations continuous by interpolating between independent draws, which act as "keyframes".  This work eliminates the keyframes, resulting in smoother, more natural motion.
