@@ -1,59 +1,62 @@
-# Theory
+\section{Theory}
+\label{sec:theory}
 
-We want to visualize an arbitrary \(n\)-dimensional Gaussian distribution,
-  \(N(\mu, \Sigma)\),
+We want to visualize an arbitrary $n$-dimensional Gaussian distribution,
+  $N(\mu, \Sigma)$,
 with mean vector
-  \(\mu \equiv \{\mu_1, \cdots, \mu_n\}\)
-and covariance matrix \(\Sigma\).
+  $\mu \equiv \{\mu_1, \cdots, \mu_n\}$
+and covariance matrix $\Sigma$.
 
-A single draw from \(N(\cdot)\) requires \(n\) draws from the standard
+A single draw from $N(\cdot)$ requires $n$ draws from the standard
 1-dimensional normal distribution \cite{3569}
-(or, equivalently, a draw from the standard \(n\)-dimensional normal
+(or, equivalently, a draw from the standard $n$-dimensional normal
 \cite{hennig-tr-is-8}), as follows.
 Let
-  \(\epsilon \equiv \{\epsilon_1, \cdots, \epsilon_n\}\)
-be \(n\) i.i.d. Gaussian values.
+  $\epsilon \equiv \{\epsilon_1, \cdots, \epsilon_n\}$
+be $n$ i.i.d. Gaussian values.
 Let
-  \(L \equiv \text{Chol}(\Sigma)\)
+  $L \equiv \text{Chol}(\Sigma)$
 be the (lower-triangular) Cholesky decomposition of the covariance matrix
-\(\Sigma\).
+$\Sigma$.
 Then the vector
   \begin{equation}
-    gamma \equiv \mu + L \epsilon
+    \gamma \equiv \mu + L \epsilon
     \label{eqn:oneRandomDraw}
   \end{equation}
-is a single draw from \(N(\cdot)\).
+is a single draw from $N(\cdot)$.
 
-The goal of animation is to produce multiple draws, \(\gamma(t)\), whose
-marginal distribution is always equal to \(N(\cdot)\):
-  \(\gamma(t) ~ N(\mu, \Sigma) \,\, \forall t\).
-Thanks to Equation \ref{eqn:oneRandomDraw}, it is sufficient to construct an
-\(\epsilon(t)\) which is marginally drawn from the _standard_ normal:
-  \(\epsilon(t) ~ N(0, I) \,\, \forall t\)
+The goal of animation is to produce multiple draws, $\gamma(t)$, whose
+marginal distribution is always equal to $N(\cdot)$:
+  $\gamma(t) \sim N(\mu, \Sigma) \,\, \forall t$.
+Thanks to Equation~\ref{eqn:oneRandomDraw}, it is sufficient to construct an
+$\epsilon(t)$ which is marginally drawn from the \textit{standard} normal:
+  $\epsilon(t) \sim N(0, I) \,\, \forall t$
 \cite{hennig-tr-is-8}.
 
-\cite{hennig-tr-is-8} treated \(\epsilon\) holistically, and exploited the
+\cite{hennig-tr-is-8} treated $\epsilon$ holistically, and exploited the
 spherical symmetry of the distribution.
-This paper instead treats the \(\{\epsilon_i\}(t)\) as independent copies of
-a single type of object: the _standard Gaussian oscillator_.
+This paper instead treats the $\{\epsilon_i\}(t)$ as independent copies of
+a single type of object: the \textit{standard Gaussian oscillator}.
 The present approach yields paths with more variety, and is simpler both in
 theory and implementation.
 
-## Gaussian oscillators
+\subsection{Gaussian oscillators}
+\label{sub:gaussian_oscillators}
 
-A standard Gaussian oscillator is a set of random variables, \(\{X_t\}\),
-indexed by the continuous variable \(t\), with the following properties:
+A standard Gaussian oscillator is a set of random variables, $\{X_t\}$,
+indexed by the continuous variable $t$, with the following properties:
 
-1. Marginally, \(X_t ~ N(0, 1) \forall t\).
-2. \(\lim_{\Delta t \rightarrow 0} \langle X_t X_{t + \Delta t} \rangle = 0
-   \forall t\)
+1. Marginally, $X_t \sim N(0, 1) \forall t$.
+2. $\lim_{\Delta t \rightarrow 0} \langle X_t X_{t + \Delta t} \rangle = 0
+   \forall t$
 
 Informally, one can imagine the oscillator as a particle moving back and forth
-along the real line as time, \(t\), passes.  The expectation of the fraction of
-time it spends at each position \(x\) is \(N(x; 0, 1)\).
+along the real line as time, $t$, passes.  The expectation of the fraction of
+time it spends at each position $x$ is $N(x; 0, 1)$.
 
 Gaussian oscillators have usually been constructed by interpolation.
 First, the integer-valued times
-evenly-spaced values of \(t\).  Then
+evenly-spaced values of $t$.  Then
 
-## Oscillator populations versus individual oscillators
+\subsection{Oscillator populations versus individual oscillators}
+\label{sub:oscillator_populations_versus_individual_oscillators}
