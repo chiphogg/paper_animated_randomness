@@ -1,3 +1,3 @@
-abstract.md
-introduction.md
-theory.md
+abstract.tex
+introduction.tex
+theory.tex
